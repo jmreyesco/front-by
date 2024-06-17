@@ -1,0 +1,69 @@
+<div class="card border-primary mb-3">
+  <div class="card-header">Clientes</div>
+  <div class="card-body text-primary">
+    <h5 class="card-title">Listado de clientes</h5>
+    <div class="my-2 text-left">
+      <button
+        class="btn btn-rounded btn-primary"
+        type="button"
+        [routerLink]="['/clientes/form']"
+      >
+        Crear Cliente
+      </button>
+    </div>
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>id</th>
+          <th>nombre</th>
+          <th>segundoNombre</th>
+          <th>apellido</th>
+          <th>segundoApellido</th>
+          <th>telefono</th>
+          <th>direccion</th>
+          <th>ciudadResidencia</th>
+          <th>email</th>
+          <th>fecha</th>
+          <th>Tipo de Documento</th>
+          <th>editar</th>
+          <th>eliminar</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let cliente of clientes">
+          <td>{{ cliente.id }}</td>
+          <td>{{ cliente.nombre }}</td>
+          <td>{{ cliente.segundoNombre }}</td>
+          <td>{{ cliente.apellido }}</td>
+          <td>{{ cliente.segundoApellido }}</td>
+          <td>{{ cliente.telefono }}</td>
+          <td>{{ cliente.direccion }}</td>
+          <td>{{ cliente.ciudadResidencia }}</td>
+          <td>{{ cliente.email }}</td>
+          <td>{{ cliente.createAt }}</td>
+          <td>{{ cliente.tipoDocumento }}</td>
+          <td>
+            <button
+              type="button"
+              name="editar"
+              [routerLink]="['/clientes/form', cliente.id]"
+              class="btn btn-primary btn-sm"
+            >
+              editar
+            </button>
+          </td>
+          <td>
+            <button
+              type="button"
+              name="eliminar"
+              (click)="delete(cliente)"
+              class="btn btn-danger btn-sm"
+            >
+              eliminar
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

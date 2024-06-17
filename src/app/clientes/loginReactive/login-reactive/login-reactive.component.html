@@ -1,0 +1,227 @@
+<!-- <form id="contactForm" [formGroup]="form" (ngSubmit)="submit(form.value)">
+  <div class="form-group">
+    <label for="suscripcion">Tipo de documentos</label>
+    <select
+      class="form-control"
+      id="suscripcion"
+      name="suscripcion"
+      formControlName="suscripcion"
+    >
+      <option *ngFor="let suscripcion of tipos" [value]="suscripcion.value">
+        {{ suscripcion.text }}
+      </option>
+    </select>
+
+    <div
+      *ngIf="suscripcion.invalid && (suscripcion.dirty || suscripcion.touched)"
+      class="alert alert-danger"
+    >
+      <div *ngIf="suscripcion.errors.required">
+        El tipo de documento es requerido
+      </div>
+    </div>
+  </div>
+  <div>
+    <label for="suscripcion">Numero de documentos</label>
+    <input
+      type="text"
+      placeholder="1039454860"
+      class="form-control"
+      name="firstname"
+      formControlName="firstname"
+    />
+
+    <div
+      *ngIf="firstname.invalid && (firstname.dirty || firstname.touched)"
+      class="alert alert-danger"
+    >
+      <div *ngIf="firstname.errors.required">
+        El nombre de usuario es requerido
+      </div>
+
+      <div *ngIf="firstname.errors.minlength">
+        La longitud mínima del password es 8 caracteres
+      </div>
+
+      <div *ngIf="firstname.errors.maxlength">
+        La longitud maxima del password es 11 caracteres
+      </div>
+      <div *ngIf="firstname.errors.pattern">Solo se admiten numeros</div>
+    </div>
+  </div>
+  <br />
+
+  <br />
+
+  <div>
+    <div *ngIf="this.form.valid; else elseBlock">
+      <button
+        id="btnSubmit"
+        mat-raised-button
+        type="submit"
+        class="btn btn-primary btn-block"
+        style="
+          border-radius: 60px;
+          background-color: rgb(53, 21, 183);
+          border-color: gray;
+        "
+        [disabled]="form.invalid"
+        name="submit"
+        (click)="goToAnotherPage()"
+      >
+        <a
+          [routerLink]="['/clientes/form', form.value.firstname]"
+          routerLinkActive="class-name"
+          style="color: white"
+        >
+          Buscar</a
+        >
+      </button>
+    </div>
+    <ng-template #elseBlock>
+      <button
+        id="btnSubmit"
+        mat-raised-button
+        type="submit"
+        class="btn btn-primary btn-block"
+        style="
+          border-radius: 60px;
+          background-color: rgb(154, 154, 166);
+          border-color: gray;
+        "
+        [disabled]="form.invalid"
+        name="submit"
+        (click)="goToAnotherPage()"
+      >
+        <a style="color: rgb(23, 22, 22)"> Buscar</a>
+      </button>
+    </ng-template>
+  </div>
+</form> -->
+
+<!-- <h1>otro</h1> -->
+
+<div class="container h-100 d-flex justify-content-center align-items-center">
+  <div class="row w-100">
+    <div class="col-lg-6 mx-auto">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <form
+            id="contactForm"
+            [formGroup]="form"
+            (ngSubmit)="submit(form.value)"
+          >
+            <div class="form-group">
+              <label for="suscripcion">Tipo de documentos</label>
+              <select
+                class="form-control"
+                id="suscripcion"
+                name="suscripcion"
+                formControlName="suscripcion"
+              >
+                <option
+                  *ngFor="let suscripcion of tipos"
+                  [value]="suscripcion.value"
+                >
+                  {{ suscripcion.text }}
+                </option>
+              </select>
+
+              <div
+                *ngIf="
+                  form.get('suscripcion').invalid &&
+                  (form.get('suscripcion').dirty ||
+                    form.get('suscripcion').touched)
+                "
+                class="alert alert-danger"
+              >
+                <div *ngIf="form.get('suscripcion').errors?.required">
+                  El tipo de documento es requerido
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="firstname">Número de documentos</label>
+              <input
+                type="text"
+                placeholder="1039454860"
+                class="form-control"
+                id="firstname"
+                formControlName="firstname"
+              />
+
+              <div
+                *ngIf="
+                  form.get('firstname').invalid &&
+                  (form.get('firstname').dirty || form.get('firstname').touched)
+                "
+                class="alert alert-danger"
+              >
+                <div *ngIf="form.get('firstname').errors?.required">
+                  El número de documento es requerido
+                </div>
+                <div *ngIf="form.get('firstname').errors?.minlength">
+                  La longitud mínima del número de documento es 8 caracteres
+                </div>
+                <div *ngIf="form.get('firstname').errors?.maxlength">
+                  La longitud máxima del número de documento es 11 caracteres
+                </div>
+                <div *ngIf="form.get('firstname').errors?.pattern">
+                  Solo se admiten números
+                </div>
+              </div>
+            </div>
+
+            <br />
+
+            <div>
+              <div *ngIf="this.form.valid; else elseBlock">
+                <button
+                  id="btnSubmit"
+                  mat-raised-button
+                  type="submit"
+                  class="btn btn-primary btn-block"
+                  style="
+                    border-radius: 60px;
+                    background-color: rgb(53, 21, 183);
+                    border-color: gray;
+                  "
+                  [disabled]="form.invalid"
+                  name="submit"
+                  (click)="goToAnotherPage()"
+                >
+                  <a
+                    [routerLink]="['/clientes/form', form.value.firstname]"
+                    routerLinkActive="class-name"
+                    style="color: white"
+                  >
+                    Buscar</a
+                  >
+                </button>
+              </div>
+              <ng-template #elseBlock>
+                <button
+                  id="btnSubmit"
+                  mat-raised-button
+                  type="submit"
+                  class="btn btn-primary btn-block"
+                  style="
+                    border-radius: 60px;
+                    background-color: rgb(154, 154, 166);
+                    border-color: gray;
+                  "
+                  [disabled]="form.invalid"
+                  name="submit"
+                  (click)="goToAnotherPage()"
+                >
+                  <a style="color: rgb(23, 22, 22)"> Buscar</a>
+                </button>
+              </ng-template>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

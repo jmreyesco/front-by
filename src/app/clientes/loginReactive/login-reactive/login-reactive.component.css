@@ -1,0 +1,22 @@
+.class-name{
+    color:white   ;
+    
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+  }
+  
+  .container {
+    height: 100vh;
+    /* background-color: #e3e5f8; Azul claro */
+  }
+  
+  .card {
+    background-color: #e3e5f8; /* Fondo blanco para el formulario */
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+

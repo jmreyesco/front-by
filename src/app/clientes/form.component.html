@@ -1,0 +1,54 @@
+<!-- otro -->
+
+<div class="row" style="width: 100%; height: 100%; margin-top: 50px">
+  <div class="col-lg-7 mx-auto" style="display: flex; align-items: center">
+    <div class="modal-body px-md-5 px-4">
+      <strong>{{ titulo }}</strong>
+      <br />
+      <br />
+      <form>
+        <div class="form-group">
+          <label class="form-label" id="color-gray">Primer nombre</label>
+          <div class="cs-password-toggle input-group-overlay">
+            <input
+              type="text"
+              class="form-control"
+              [(ngModel)]="myName"
+              name="apellido"
+              disabled="true"
+            />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="ac-fn" class="form-label" id="color-gray"
+            >Primer apellido</label
+          >
+          <div class="cs-password-toggle input-group-overlay">
+            <input
+              type="text"
+              class="form-control"
+              [(ngModel)]="myLastName"
+              name="nombre"
+              disabled="true"
+            />
+          </div>
+        </div>
+
+        <div
+          class="d-flex justify-content-between align-items-center form-group"
+        >
+          <!-- fin -->
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<button
+  type="button"
+  name="editar"
+  [routerLink]="['/loginReactive']"
+  class="btn btn-primary btn-sm"
+>
+  Volver
+</button>

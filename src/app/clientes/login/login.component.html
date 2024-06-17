@@ -1,0 +1,183 @@
+<div class="row" style="width: 100%; height: 100%; margin-top: 50px">
+  <div class="col-lg-7 mx-auto" style="display: flex; align-items: center">
+    <div class="modal-body px-md-5 px-4">
+      <p class="font-size-sm text-muted text-center">
+        Todos los campos son obligatorios
+      </p>
+      <form [formGroup]="formdata" (ngSubmit)="onClickSubmit1(formdata.value)">
+        <!-- <div class="form-group">
+          <label for="ac-fn">Tipo de Docuemnto</label>
+          <select
+            name="pais"
+            required
+            [(ngModel)]="direccion.pais"
+            class="custom-select custom-select-lg"
+            (change)="select_pais()"
+          >
+            <option value="" selected disabled>Seleccionar</option>
+            <option value="CC">Cédula de Ciudadanía</option>
+            <option value="P">Pasaporte</option>
+          </select>
+        </div> -->
+
+        <div class="form-group">
+          <label for="ac-fn" class="form-label">Tipo de documento</label>
+          <div class="cs-password-toggle input-group-overlay">
+            <input
+              type="text"
+              class="form-control appended-form-control"
+              name="userName"
+              placeholder="1039454860"
+              required=""
+              formControlName="userName"
+            />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Numero de documento</label>
+          <div class="cs-password-toggle input-group-overlay">
+            <input
+              type="text"
+              class="form-control appended-form-control"
+              name="password"
+              placeholder="1039454860"
+              required=""
+            />
+          </div>
+        </div>
+        <div
+          class="d-flex justify-content-between align-items-center form-group"
+        >
+          <!-- fin -->
+        </div>
+        <button
+          type="submit"
+          class="btn btn-primary btn-block"
+          style="border-radius: 60px"
+        >
+          <a class="nav-link" routerLink="/clientes">
+            <h6 style="color: rgb(239, 227, 239)">Buscar</h6></a
+          >
+        </button>
+        <input
+          type="submit"
+          class="btn btn-primary btn-block"
+          style="border-radius: 60px"
+          value="Reactivo"
+        />
+      </form>
+    </div>
+  </div>
+</div>
+<!-- otro ejemlo -->
+<form #userName="ngForm" (ngSubmit)="onClickSubmit(userName.value)">
+  <input type="text" name="username" placeholder="username" ngModel />
+  <br />
+  <br />
+  <input type="submit" value="NoReactivo" />
+  <br />
+  <br />
+</form>
+
+<div>
+  <form [formGroup]="formdata" (ngSubmit)="onClickSubmit1(formdata.value)">
+    <input
+      type="text"
+      name="userName"
+      placeholder="userName"
+      formControlName="userName"
+      required=""
+    />
+    <br />
+    <br />
+    <input type="submit" value="Reactivo" />
+    <button
+      type="submit"
+      class="btn btn-primary btn-block"
+      style="border-radius: 60px"
+    >
+      <a class="nav-link" routerLink="/clientes">
+        <h6 style="color: rgb(239, 227, 239)">Buscar</h6></a
+      >
+    </button>
+    <p>Textbox result is: {{ userName }}</p>
+  </form>
+</div>
+<!-- otro -->
+<main class="cs-page-wrapper">
+  <nav class="bg-secondary mb-3" aria-label="breadcrumb">
+    <div class="container">
+      <ol class="breadcrumb breadcrumb-alt mb-0">
+        <li class="breadcrumb-item">
+          <a href="index.html"><i class="cxi-home"></i></a>
+        </li>
+        <li class="breadcrumb-item active" aria-current="page">Checkout</li>
+      </ol>
+    </div>
+  </nav>
+
+  <section class="container pt-3 pt-md-4 pb-3 pb-sm-4 pb-lg-5 mb-4">
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="px-md-5">
+          <h3 class="modal-title mt-4 mb-0 text-center">Iniciar Sesión</h3>
+          <p class="font-size-sm text-muted text-center">
+            Sign in to your account using email and password provided during
+            registration.
+          </p>
+          <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+            <div class="form-group">
+              <label for="signin-email">Correo Electrónico</label>
+              <input
+                type="email"
+                class="form-control"
+                placeholder="Correo Electrónico"
+                required=""
+                name="email"
+                [(ngModel)]="user.email"
+              />
+            </div>
+            <div class="form-group">
+              <label for="signin-password" class="form-label">Contraseña</label>
+              <div class="cs-password-toggle input-group-overlay">
+                <input
+                  type="password"
+                  class="form-control appended-form-control"
+                  id="signin-password"
+                  placeholder="Tu Contraseña"
+                  required=""
+                  name="password"
+                  [(ngModel)]="user.password"
+                />
+                <div class="input-group-append-overlay">
+                  <label class="btn cs-password-toggle-btn input-group-text">
+                    <input type="checkbox" class="custom-control-input" />
+                    <i class="cxi-eye cs-password-toggle-indicator"></i>
+                    <span class="sr-only">Show password</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div
+              class="d-flex justify-content-between align-items-center form-group"
+            >
+              <a href="#" class="font-size-sm text-decoration-none"
+                >Olvido su contraseña?</a
+              >
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">
+              Iniciar sesión
+            </button>
+            <p class="font-size-sm pt-4 mb-0">
+              No tienes una cuenta?
+              <a href="#" class="font-weight-bold text-decoration-none"
+                >Registrate</a
+              >
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
